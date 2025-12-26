@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - UP Traffic Study</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        h1 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; margin-top: 30px; }
+        .disclaimer {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        .source {
+            background: #e8f4f8;
+            border-left: 4px solid #17a2b8;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        a { color: #3498db; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 8px 16px;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+        .back-link:hover { background: #2980b9; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">Back to Map</a>
+
+    <h1>About This Traffic Study Visualization</h1>
+
+    <h2>Data Source</h2>
+    <div class="source">
+        <p><strong>Study:</strong> University Park Traffic Calming Implementation Plan</p>
+        <p><strong>Conducted by:</strong> Town of University Park, Maryland</p>
+        <p><strong>Data Collection Date:</strong> Wednesday, April 23, 2025</p>
+        <p><strong>Time Periods:</strong> 6:00-10:00 AM and 3:00-7:00 PM</p>
+        <p><strong>Method:</strong> Origin-Destination camera tracking at 30 key intersections</p>
+    </div>
+
+    <h2>What This Shows</h2>
+    <p>This visualization displays vehicle routes observed during the traffic study. Each animated dot represents the path vehicles took through University Park. Routes are colored by volume:</p>
+    <ul>
+        <li><strong style="color:#bd0026;">Dark Red:</strong> High volume (>50 vehicles)</li>
+        <li><strong style="color:#f03b20;">Red:</strong> Medium-high volume (21-50 vehicles)</li>
+        <li><strong style="color:#fd8d3c;">Orange:</strong> Medium volume (11-20 vehicles)</li>
+        <li><strong style="color:#feb24c;">Light Orange:</strong> Low volume (1-10 vehicles)</li>
+    </ul>
+
+    <h2>Disclaimers</h2>
+    <div class="disclaimer">
+        <p><strong>Purple Line Construction Impact:</strong> This data was collected during active Purple Line light rail construction in the area. Traffic patterns on Adelphi Road and surrounding streets may have been affected by:</p>
+        <ul>
+            <li>Lane reductions on University Boulevard (MD 193)</li>
+            <li>Turn restrictions at Adelphi Road intersections</li>
+            <li>Drivers seeking alternate routes to avoid construction zones</li>
+        </ul>
+        <p>Cut-through traffic volumes observed may be higher than normal conditions.</p>
+    </div>
+
+    <div class="disclaimer">
+        <p><strong>Single Day Sample:</strong> This data represents one Wednesday in April 2025. Traffic patterns may vary by:</p>
+        <ul>
+            <li>Day of week</li>
+            <li>Season and school schedules</li>
+            <li>Weather conditions</li>
+            <li>Special events</li>
+        </ul>
+    </div>
+
+    <div class="disclaimer">
+        <p><strong>Visualization Accuracy:</strong> Intersection locations have been manually positioned to match the study map. Routes are shown as straight lines between intersections and do not follow actual road curves.</p>
+    </div>
+
+    <h2>Study Goals</h2>
+    <p>The University Park Traffic Calming Implementation Plan aims to:</p>
+    <ol>
+        <li>Improve traffic operations and reduce cut-through traffic</li>
+        <li>Reduce vehicular speeding</li>
+        <li>Improve walkability and bicycle mobility for residents and school children</li>
+    </ol>
+
+    <h2>More Information</h2>
+    <p>For the complete traffic study report and implementation recommendations, contact the <a href="https://www.upmd.org/" target="_blank">Town of University Park</a>.</p>
+
+    <h2>About This Project</h2>
+    <p style="background:#f8f9fa;padding:15px;border-radius:5px;font-size:0.95em;">
+        <strong>This is not an official position.</strong> I am an AI enthusiast who thought it would be cool to code this up with Claude and Gemini CLIs on Christmas Day. So here is the webpage. As always, anything on this page does not have my employer's concurrence.
+    </p>
+
+    <p style="margin-top:40px;padding-top:20px;border-top:1px solid #ddd;color:#666;font-size:0.9em;">
+        Visualization created December 25, 2025. Data source: UP_OD_Routes_Combined_(July_2025).pdf
+    </p>
+</body>
+</html>

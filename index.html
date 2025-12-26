@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UP Traffic Study Data</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        body { margin: 0; padding: 0; font-family: sans-serif; }
+        #map { height: 100vh; width: 100%; }
+        #controls {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: white;
+            padding: 12px;
+            z-index: 1000;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            width: 180px;
+            max-height: 90vh;
+            overflow-y: auto;
+            font-size: 0.85em;
+        }
+        .control-group { margin-bottom: 8px; }
+        h3 { margin-top: 0; margin-bottom: 5px; font-size: 1.1em; }
+        h4 { margin: 5px 0; font-size: 0.95em; }
+        label { display: block; margin-bottom: 5px; font-size: 0.9em; }
+        .legend-item { display: flex; align-items: center; margin-bottom: 2px; font-size: 0.85em; }
+        .legend-color { width: 12px; height: 3px; margin-right: 5px; flex-shrink: 0; }
+        button { padding: 4px 8px; cursor: pointer; font-size: 0.85em; }
+    </style>
+</head>
+<body>
+<div id="error-log" style="position:fixed; bottom:0; left:0; width:100%; background:rgba(255,0,0,0.8); color:white; padding:10px; z-index:9999; display:none;"></div>
+<script>
+    window.onerror = function(msg, url, lineNo, columnNo, error) {
+        var errorLog = document.getElementById('error-log');
+        errorLog.style.display = 'block';
+        errorLog.innerHTML += 'Error: ' + msg + '<br>Line: ' + lineNo + '<br>';
+        return false;
+    };
+</script>
+
+<div id="controls">
+    <h3>UP Traffic Study Data</h3>
+    <p style="font-size:0.8em;color:#666;margin:0 0 5px 0;">Wed, April 23, 2025</p>
+    <div id="sim-clock" style="font-size:1.4em;font-weight:bold;color:#333;margin-bottom:10px;">6:00 AM</div>
+    <div class="control-group">
+        <button id="toggle-sim">Pause Simulation</button>
+    </div>
+        <div class="control-group">
+        <label>Simulation Speed: <span id="speed-val">1x</span></label>
+        <input type="range" id="speed-range" min="1" max="10" value="1">
+    </div>
+    <div class="control-group">
+        <h4>Volume Legend</h4>
+        <div class="legend-item"><div class="legend-color" style="background:#bd0026;"></div> High (&gt;50 cars)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#f03b20;"></div> Med-High (21-50)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#fd8d3c;"></div> Medium (11-20)</div>
+        <div class="legend-item"><div class="legend-color" style="background:#feb24c;"></div> Low (1-10)</div>
+    </div>
+    <div class="control-group">
+        <h4>Top Routes</h4>
+        <div id="route-list">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+    <div style="margin-top:10px;border-top:1px solid #ddd;padding-top:8px;">
+        <a href="about.html" style="font-size:0.8em;color:#0066cc;">About this study</a>
+    </div>
+</div>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="data.js?v=29"></script>
+<script src="app.js?v=29"></script>
+</body>
+</html>
